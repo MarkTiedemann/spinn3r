@@ -66,15 +66,19 @@ setTimeout(() =>
 
 **Why are there no options?**
 
-- This module is deliberately opinionated. If you are looking for a beautiful spinner with options, please use [ora](https://github.com/sindresorhus/ora).
+- Because this module is deliberately opinionated. If you are looking for a beautiful spinner with options, please use [ora](https://github.com/sindresorhus/ora).
+
+**Why does this module require Node 6?**
+
+- Because Node 6 has some pretty [nice features](https://nodejs.org/en/docs/es6/). If you haven't yet, go check them out.
 
 **Does this spinner handle the Windows Command Prompt well?**
 
-- No.
+- No. For God's sake, don't use the Window Command Prompt.
 
 **Will this spinner gracefully not do anything if run in a CI environment?**
 
-- No.
+- No. Please don't use it in a CI environment.
 
 ## License
 
