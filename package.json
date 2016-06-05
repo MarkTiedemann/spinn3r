@@ -16,6 +16,9 @@
     "fail",
     "update"
   ],
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "author": "Mark Tiedemann <www.marktiedemann@gmail.com>",
   "license": "WTFPL",
   "dependencies": {
