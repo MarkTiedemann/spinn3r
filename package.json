@@ -1,0 +1,36 @@
+{
+  "name": "spinn3r",
+  "version": "1.0.0",
+  "description": "Simple, beautiful spinner.",
+  "main": "index.js",
+  "keywords": [
+    "cli",
+    "term",
+    "terminal",
+    "spinn3r",
+    "spinner",
+    "spin",
+    "beautiful",
+    "elegant",
+    "succcess",
+    "fail",
+    "update"
+  ],
+  "author": "Mark Tiedemann <www.marktiedemann@gmail.com>",
+  "license": "WTFPL",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "circ-iter": "^2.0.0",
+    "cli-spinners": "^0.1.2",
+    "log-update": "^1.0.2",
+    "once": "^1.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkTiedemann/spinn3r.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarkTiedemann/spinn3r/issues"
+  },
+  "homepage": "https://github.com/MarkTiedemann/spinn3r"
+}
