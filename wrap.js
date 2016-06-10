@@ -1,10 +1,16 @@
 'use strict'
 
-const blanks = n => new Array(n + 1).join(' ')
-const chunk = (string, length) => String(string).match(new RegExp(`.{1,${length}}`, 'g'))
+const wordWrap = require('word-wrap')
 
-module.exports = ({ message, indentLeft = 4, indentRight = 4, indentFirstLine = false }) => {
-    const lines = chunk(message, process.stdout.columns - indentLeft - indentRight)
-        .map(line => blanks(indentLeft) + line + '\n').join('')
+const blanks = n => new Array(n + 1).join(' ')
+
+module.exports = ({ message = '', indentLeft = 4, indentRight = 4, indentFirstLine = false } = {}) => {
+
+    const lines = wordWrap(message, {
+        width: process.stdout.columns - indentLeft - indentRight,
+        indent: blanks(indentLeft),
+        trim: true
+    })
+
     return indentFirstLine ? lines : lines.slice(indentLeft)
 }
