@@ -9,20 +9,20 @@ const log = require('log-update')
 const once = require('once')
 const wrap = require('./wrap')
 
-module.exports = msg => {
+module.exports = message => {
 
     const updatePrefix = () => '\n  ' + cyan(next()) + ' '
     const successPrefix = '\n  ' + green('✔') + ' '
     const failPrefix = '\n  ' + red('✖') + ' '
 
-    const start = setInterval(() => log(updatePrefix() + wrap(msg)), 80)
-    const end = once (msg => { clearInterval(start); log(msg) })
+    const start = setInterval(() => log(updatePrefix() + wrap({ message })), 80)
+    const end = once (message => { clearInterval(start); log(message) })
 
-    this.update = newMsg => msg = newMsg
-    this.success = msg => end(successPrefix + wrap(msg))
-    this.fail = msg => msg instanceof Error
-        ? end(failPrefix + msg.stack.toString() + '\n')
-        : end(failPrefix + wrap(msg))
+    this.update = newMessage => message = newMessage
+    this.success = message => end(successPrefix + wrap({ message }))
+    this.fail = message => message instanceof Error
+        ? end(failPrefix + message.stack.toString() + '\n')
+        : end(failPrefix + wrap({ message }))
 
     return this
 }
